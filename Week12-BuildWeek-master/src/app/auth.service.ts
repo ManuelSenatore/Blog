@@ -9,7 +9,7 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 })
 export class AuthService {
 
-  url =  "http://localhost:3000/api/";
+  url =  "https://localhost:3000/api/";
 
   logged = false;
 
@@ -68,7 +68,7 @@ export class AuthService {
 myAccount(){
   if(localStorage.getItem("token") && localStorage.getItem("id")){
     let id = localStorage.getItem("id")
-    this.http.get<[]>("http://localhost:3000/api/getusers/" + id).subscribe((user) => {
+    this.http.get<[]>("https://localhost:3000/api/getusers/" + id).subscribe((user) => {
      this.account = user;
     })
   }

@@ -13,7 +13,7 @@ export class PostService {
 
    postid!: number;
 
-   url =  "http://localhost:3000/api/";
+   url =  "https://localhost:3000/api/";
 
   sub = new BehaviorSubject<Post[]>([])
   obs = this.sub.asObservable()
@@ -44,13 +44,13 @@ export class PostService {
     })
   }
   deletePost(postid:number){
-    this.http.delete("http://localhost:3000/api/posts/" + postid).subscribe((res) => {
+    this.http.delete("https://localhost:3000/api/posts/" + postid).subscribe((res) => {
       console.log(res)
     })
     console.log("daje")
   }
   deleteComment(commentoid:number){
-    this.http.delete("http://localhost:3000/api/comments/" + commentoid).subscribe((res) => {
+    this.http.delete("https://localhost:3000/api/comments/" + commentoid).subscribe((res) => {
     console.log(res)
   })
   console.log("daje")
